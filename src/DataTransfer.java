@@ -579,15 +579,36 @@ public class DataTransfer {
         }
             return null;
 	}
+
+ private void getVarOffset()
+    {
+        
+        int N = 10000000;
+        
+        int offset_L = N % max_length;
+        int offset_R = (max_length - offset_L)+1;
+        
+        int root = max_length /2 ;
+        
+        
+        if (offset_L < root)
+            
+                var_offset =  (root * offset_L) % offset_R;
+                
+                else
+            
+                var_offset =  (root * offset_R) % offset_L;
+
+      }
         
     public static void main(String[] args) {
 
         String server = "162.144.57.226";
         int port = 22;
-        String user = "nadeem";
-        String pass = "bayan@123";
+        String user = "test";
+        String pass = "test";
         String localPath = "C:/test/";
-        String remotePath = "/home/nadeem/public_html/experiments/";
+        String remotePath = "/home/test/public_html/experiments/";
 
         final String secretKey = "abc";
 
